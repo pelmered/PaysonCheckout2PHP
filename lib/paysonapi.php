@@ -8,6 +8,7 @@ namespace PaysonEmbedded {
     require_once "customer.php";
     require_once "gui.php";
     require_once "paysoncheckout.php";
+    require_once "account.php";
 }
 
 namespace PaysonEmbedded {
@@ -19,6 +20,7 @@ namespace PaysonEmbedded {
         private $protocol = "https://%s";
         const PAYSON_HOST = "api.payson.se/2.0/";
         const ACTION_CHECKOUTS = "Checkouts/";
+        const ACTION_ACCOUNTS = "Accounts/";
         private $paysonMerchant = NULL;
         private $payData = NULL;
         private $customer = NULL;
@@ -78,6 +80,11 @@ namespace PaysonEmbedded {
             $checkout->status = 'canceled';
             return $this->UpdateCheckout($checkout);
         }
+        
+        public function Validate() {
+            $result = $this->doCurlRequest('GET', $this->getUrl(self::ACTION_ACCOUNTS), null);
+            return Account::create(json_decode($result));
+        }
 
         private function doCurlRequest($method, $url, $postfields) {
             $ch = curl_init($url);
@@ -92,7 +99,6 @@ namespace PaysonEmbedded {
             $body = substr($result, $header_size);
             $response_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
             curl_close($ch);
-            
             
             /* This class of status codes indicates the action requested by the client was received, understood, accepted and processed successfully
              * 200 OK

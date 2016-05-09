@@ -24,7 +24,7 @@ if(isset($_POST['checkoutId'])) {
     }elseif($checkout->status == 'readyToPay'){
         echo '<H3> Client is ready to pay.... </H3>';
     }elseif($checkout->status == 'readyToShip'){
-         echo "<H3> Purchase has been completed and ready to be shipped</H3>" ;
+         echo "<H3> Purchase has been completed and ready to be shipped. PurchaseId: ".$checkout->purchaseId."</H3>" ;
     }elseif($checkout->status == 'denied'){
         echo "<H3> The purchase is denied by any reason</H3>" ;
     }else {

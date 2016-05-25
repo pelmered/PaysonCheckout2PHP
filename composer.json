@@ -3,7 +3,7 @@
     "description": "",
     "homepage"   : "https://www.payson.se/sv/",
     "keywords"    : ["payon","checkout","woocommerce","wordpress","gateway"],
-    "type"       : "wordpress-plugin",
+    "type"       : "library",
     "license"    : "GPL-2.0+",
     "authors"     : [
     {

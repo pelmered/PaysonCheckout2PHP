@@ -1,0 +1,21 @@
+{
+    "name"       : "pelmered/PaysonCheckout2PHP",
+    "description": "",
+    "homepage"   : "https://www.payson.se/sv/",
+    "keywords"    : ["payon","checkout","woocommerce","wordpress","gateway"],
+    "type"       : "wordpress-plugin",
+    "license"    : "GPL-2.0+",
+    "authors"     : [
+    {
+        "name"    : "Payson",
+        "email"   : "info@payson.se",
+        "homepage": "https://www.payson.se/"
+    }
+    ],
+    "support"     : {
+        "issues": "https://github.com/PaysonAktiebolag/PaysonCheckout2PHP/issues"
+    },
+    "require"    : {
+        "composer/installers": "~1.0"
+    }
+}

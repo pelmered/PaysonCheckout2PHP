@@ -14,7 +14,7 @@ ini_set("display_errors", 1);
  * need to include the file lib/paysonapi.php
  * from where you installed it.
  */
-require_once '../lib/paysonapi.php';
+require_once '../lib/PaysonApi.php';
 
 /*
  * Account information. Below is all the variables needed to perform a purchase with
